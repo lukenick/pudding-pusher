@@ -4,7 +4,20 @@
 	<!-- Find meta tags and put them here -->
 </head>
 <body>
-	<h2> You have 0 puddings. </h2>
-	<img src="main-pudding.png">
+	<h2 id="pudding-count"> You have 0 puddings. </h2>
+	<img id="pudding-pic" src="main-pudding.png">
 </body>
+<script>
+	var puddings=0;
+
+	// Event Listeners for Pudding Pressing
+	document.getElementById("pudding-pic").addEventListener("click", pushPudding);
+
+	function pushPudding(){
+		puddings = puddings + 1;
+		document.getElementById("pudding-count").innerHTML = "You have " + puddings + " puddings.";
+	}
+
+
+</script>
 </html>
