@@ -35,22 +35,27 @@
 	</div>
 	<div id="middle-section">
 		<h3 id="bowl-count"> You own 0 bowls. </h3>
+		<h3 id="employee-count"> You have 0 employees. </h3>
 	</div>
 	<div id="right-section">
 		<h3 id="buy-bowl"> BUY BOWL (Cost = 10 Puddings)</h3>
 		<h4> A fancy bowl to make pudding making easier. </h4>
+		<h3 id="buy-employee"> HIRE EMPLOYEE (Cost = 100 Puddings)</h3>
+		<h4> Hire a staff member to slowly make puddings on their own. </h4>
 	</div>
 
 </body>
 <script>
 	var puddings=0;
 	var bowls=0;
+	var employees=0;
 
 	// Event Listeners for Pudding Pressing
 	document.getElementById("pudding-pic").addEventListener("click", pushPudding);
 
 	// Event Listeners for Upgrades
 	document.getElementById("buy-bowl").addEventListener("click", buyBowl);
+	document.getElementById("buy-employee").addEventListener("click", buyEmployee);
 
 	function pushPudding(){
 		puddings = puddings + 1 + bowls*0.01;
@@ -64,7 +69,18 @@
 			document.getElementById("bowl-count").innerHTML = "You have " + bowls + " bowls.";	
 		}
 	}
+	function buyEmployee(){
+		if (puddings >= 100) {
+			puddings = puddings - 100;
+			employees = employees + 1;
+			document.getElementById("employee-count").innerHTML = "You have " + employees + " employees.";	
+		}
+	}
 
+	const interval = setInterval(function() {
+		puddings = puddings + employees*0.1
+		document.getElementById("pudding-count").innerHTML = "You have " + puddings + " puddings.";
+	}, 1000);
 
 
 </script>
