@@ -3,9 +3,43 @@
 	<title> Pudding Pusher </title>
 	<!-- Find meta tags and put them here -->
 </head>
+<style>
+	body {
+		text-align: center;
+	}
+	#left-section {
+		float: left;
+		width: 33%;
+		height: 100%;
+	}
+	#middle-section {
+		float: left;
+		width: 33%;
+		height: 100%;
+	}
+	#right-section {
+		float: left;
+		width: 33%;
+		height: 100%;
+	}
+	#left-section img{
+
+		width: 80%;
+		padding: 10%;
+	}
+</style>
 <body>
-	<h2 id="pudding-count"> You have 0 puddings. </h2>
-	<img id="pudding-pic" src="main-pudding.png">
+	<div id="left-section">
+		<h2 id="pudding-count"> You have 0 puddings.</h2>
+		<img id="pudding-pic" src="main-pudding.png">
+	</div>
+	<div id="middle-section">
+		<h3> This will show what upgrades you have already purchased. </h3>
+	</div>
+	<div id="right-section">
+		<h3> This will show what upgrades you are able to purchase. </h3>
+	</div>
+
 </body>
 <script>
 	var puddings=0;
